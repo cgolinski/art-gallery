@@ -1,5 +1,6 @@
 import React from "react";
+import { PopularArtists } from "./PopularArtists.tsx";
 
-const Example = () => <div>Hello World</div>;
+const App = () => <PopularArtists />;
 
-export default Example;
+export default App;

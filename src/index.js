@@ -7,44 +7,32 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
 const client = new ApolloClient({
-  uri: "https://48p1r2roz4.sse.codesandbox.io",
+  uri: "https://metaphysics-production.artsy.net",
 });
 
-client
-  .query({
-    query: gql`
-      {
-        rates(currency: "USD") {
-          currency
-        }
-      }
-    `,
-  })
-  .then((result) => console.log(result));
+// const POPULAR_ARTISTS = gql`
+//   {
+//     popular_artists {
+//       artists {
+//         name
+//       }
+//     }
+//   }
+// `;
 
-const EXCHANGE_RATES = gql`
-  {
-    rates(currency: "USD") {
-      currency
-      rate
-    }
-  }
-`;
+// const PopularArtists = () => {
+//   const { loading, error, data } = useQuery(POPULAR_ARTISTS);
 
-const ExchangeRates = () => {
-  const { loading, error, data } = useQuery(EXCHANGE_RATES);
+//   if (loading) return <p>Loading...</p>;
+//   if (error) return <p>Error :(</p>;
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
-
-  return data.rates.map(({ currency, rate }) => (
-    <div key={currency}>
-      <p>
-        {currency}: {rate}
-      </p>
-    </div>
-  ));
-};
+//   return data.popular_artists.artists.map((artist) => (
+//     <div key={artist.name}>
+//       <p>artist: {artist.name}</p>
+//       <p>category: {artist.name}</p>
+//     </div>
+//   ));
+// };
 
 ReactDOM.render(
   <ApolloProvider client={client}>
@@ -53,7 +41,7 @@ ReactDOM.render(
         <h2>My first Apollo app 🚀</h2>
       </div>
       <App />
-      <ExchangeRates />
+      {/* <PopularArtists /> */}
     </React.StrictMode>
   </ApolloProvider>,
   document.getElementById("root")
