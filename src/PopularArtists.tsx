@@ -1,6 +1,7 @@
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
-import React from "react";
+import * as React from "react";
+import { Artwork } from "./Artwork";
 
 const POPULAR_ARTISTS = gql`
   {
@@ -12,6 +13,7 @@ const POPULAR_ARTISTS = gql`
         artworks {
           id
           title
+          imageUrl
         }
       }
     }
@@ -24,14 +26,14 @@ export const PopularArtists = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
-  return data.popular_artists.artists.map((artist) => (
-    <div key={artist.id}>
-      <p>artist: {artist.name}</p>
-      <p>bio: {artist.bio}</p>
+  return data.popular_artists.artists.map(({ id, name, bio, artworks }) => (
+    <div key={id}>
+      <p>artist: {name}</p>
+      <p>bio: {bio}</p>
       <ul>
-        list of artwork:
-        {artist.artworks.map((artwork) => (
-          <li key={artwork.id}>{artwork.title}</li>
+        {name}'s artwork:
+        {artworks.map((artwork) => (
+          <Artwork key={artwork.id} artwork={artwork} />
         ))}
       </ul>
     </div>
