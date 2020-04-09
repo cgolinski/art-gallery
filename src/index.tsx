@@ -1,14 +1,14 @@
-import { ApolloProvider } from "@apollo/react-hooks";
-import ApolloClient from "apollo-boost";
-import * as React from "react";
-import * as ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
-import * as serviceWorker from "./serviceWorker";
-import "tachyons";
+import { ApolloProvider } from '@apollo/react-hooks';
+import ApolloClient from 'apollo-boost';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
+import 'tachyons';
 
 const client = new ApolloClient({
-  uri: "https://metaphysics-production.artsy.net",
+  uri: 'https://metaphysics-production.artsy.net',
 });
 
 ReactDOM.render(
@@ -17,7 +17,7 @@ ReactDOM.render(
       <App />
     </React.StrictMode>
   </ApolloProvider>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change

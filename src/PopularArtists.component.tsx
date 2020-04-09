@@ -1,12 +1,12 @@
-import { useQuery } from "@apollo/react-hooks";
-import { gql } from "apollo-boost";
-import * as React from "react";
-import { Artwork } from "./Artwork";
+import { useQuery } from '@apollo/react-hooks';
+import { gql } from 'apollo-boost';
+import * as React from 'react';
+import { Artwork } from './Artwork.component';
 import type {
   Artist,
   ArtworkType,
   GetPopularArtistsData,
-} from "./types/data.types";
+} from './types/data.types';
 
 const GET_POPULAR_ARTISTS = gql`
   {
