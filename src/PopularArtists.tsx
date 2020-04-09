@@ -35,18 +35,19 @@ export const PopularArtists: React.StatelessComponent = () => {
 
   return (
     <div>
-      <h3>Popular Artists</h3>
+      <h2>Popular Artists</h2>
       {data?.popular_artists.artists.map(
         ({ id, name, bio, artworks }: Artist) => (
           <div key={id}>
-            <p>artist: {name}</p>
-            <p>bio: {bio}</p>
-            <ul>
-              {name}'s artwork:
+            <div className="flex flex-column">
+              <h3 className="b mb0">{name}</h3>
+              <span>{bio}</span>
+            </div>
+            <div className="flex justify-around flex-wrap">
               {artworks.map((artwork: ArtworkType) => (
                 <Artwork key={artwork.id} artwork={artwork} />
               ))}
-            </ul>
+            </div>
           </div>
         )
       )}

@@ -5,6 +5,7 @@ import * as ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import "tachyons";
 
 const client = new ApolloClient({
   uri: "https://metaphysics-production.artsy.net",
