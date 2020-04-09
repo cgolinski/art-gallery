@@ -1,7 +1,10 @@
-import { ApolloProvider, useQuery } from "@apollo/react-hooks";
-import ApolloClient, { gql } from "apollo-boost";
-import React from "react";
-import ReactDOM from "react-dom";
+import {
+  ApolloProvider,
+  // useQuery
+} from "@apollo/react-hooks";
+import ApolloClient from "apollo-boost"; //  { gql }
+import * as React from "react";
+import * as ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
