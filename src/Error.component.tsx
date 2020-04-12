@@ -12,5 +12,6 @@ export const Error: React.StatelessComponent<ErrorProps> = ({
       "oops". Try refreshing your browser.
     </p>
     <p>{errorMessage}</p>
+    {console.error('Error: ', errorMessage)}
   </div>
 );

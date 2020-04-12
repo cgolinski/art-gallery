@@ -23,7 +23,8 @@ export const Search: React.StatelessComponent<SearchProps> = ({
         onChange={handleChange}
       />
       <label className="f4 pb2 db" htmlFor="search-input">
-        Search by artist or artwork
+        Search by artist
+        {/* or artwork */}
       </label>
     </form>
   );
