@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Artwork } from './Artwork.component';
 import type { Artist, ArtworkType } from './types/data.types';
 import { ApolloError } from 'apollo-boost';
+import { Loading } from './Loading.component';
 
 type PopularArtistsProps = {
   displayedArtists: Artist[];
@@ -14,7 +15,7 @@ export const PopularArtists: React.StatelessComponent<PopularArtistsProps> = ({
   loading,
   error,
 }) => {
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading />;
   if (error) return <p>Error :(</p>;
 
   return (
