@@ -1,21 +1,57 @@
 import * as React from 'react';
 import { PopularArtists } from './PopularArtists.component';
 import { Search } from './Search.component';
+import { gql } from 'apollo-boost';
+import { useQuery } from '@apollo/react-hooks';
+import { GetPopularArtistsData } from './types/data.types';
+
+const GET_POPULAR_ARTISTS = gql`
+  {
+    popular_artists {
+      artists {
+        id
+        name
+        bio
+        artworks {
+          id
+          title
+          imageUrl
+        }
+      }
+    }
+  }
+`;
 
 const App = () => {
-  const [displayedArtists, setDisplayedArtists] = React.useState([]);
-  const [initialArtists, setInitialArtists] = React.useState([]);
+  const { loading, error, data } = useQuery<GetPopularArtistsData>(
+    GET_POPULAR_ARTISTS
+  );
+
+  const [searchValue, setSearchValue] = React.useState('');
+  const popularArtistsData: GetPopularArtistsData = data || {
+    popular_artists: { artists: [] },
+  };
+
+  const filteredArtists =
+    popularArtistsData.popular_artists.artists.length && searchValue
+      ? popularArtistsData.popular_artists.artists.filter(({ name }) =>
+          name.toLowerCase().includes(searchValue.toLowerCase())
+        )
+      : [];
+
+  const displayedArtists = filteredArtists.length
+    ? filteredArtists
+    : popularArtistsData.popular_artists.artists || [];
 
   return (
     <div>
       <div className="flex justify-end">
-        <Search setDisplayedArtists={setDisplayedArtists} />
+        <Search setSearchValue={setSearchValue} searchValue={searchValue} />
       </div>
       <PopularArtists
-        setInitialArtists={setInitialArtists}
-        displayedArtists={
-          displayedArtists.length ? displayedArtists : initialArtists
-        }
+        loading={loading}
+        error={error}
+        displayedArtists={displayedArtists}
       />
     </div>
   );

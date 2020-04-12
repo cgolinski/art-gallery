@@ -1,10 +1,10 @@
 import * as React from 'react';
 import type { ArtworkType } from './types/data.types';
 
-export interface ArtworkProps {
+type ArtworkProps = {
   key: string;
   artwork: ArtworkType;
-}
+};
 
 export const Artwork: React.StatelessComponent<ArtworkProps> = ({
   artwork,
