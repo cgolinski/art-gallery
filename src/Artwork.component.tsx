@@ -14,7 +14,3 @@ export const Artwork: React.StatelessComponent<ArtworkProps> = ({
     <span className="pt2">{artwork.title}</span>
   </div>
 );
-
-// Search for artist by name, case insensitive
-// Search for artwork by name, case insensitive, same input field as other search
-// Filter the artwork to show only their artwork

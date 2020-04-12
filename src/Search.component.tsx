@@ -1,10 +1,38 @@
 import * as React from 'react';
+import { gql } from 'apollo-boost';
+import { useLazyQuery } from '@apollo/react-hooks';
+import { GetPopularArtistsData } from './types/data.types';
 
-export type SearchProps = {};
-export type SearchState = { value: string };
+export type SearchProps = { setDisplayedArtists: any };
+export type SearchState = { inputValue: string };
 
-export const Search = () => {
+const GET_POPULAR_ARTISTS = gql`
+  {
+    popular_artists {
+      artists {
+        id
+        name
+        bio
+        artworks {
+          id
+          title
+          imageUrl
+        }
+      }
+    }
+  }
+`;
+
+export const Search = ({ setDisplayedArtists }: SearchProps) => {
   const [inputValue, setInputValue] = React.useState('');
+
+  const [getData, { loading, error, data }] = useLazyQuery<
+    GetPopularArtistsData
+  >(GET_POPULAR_ARTISTS);
+
+  const nameIncludesSearchTerm = (searchTerm: string) => (
+    name: string
+  ): boolean => name.includes(searchTerm);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
@@ -12,6 +40,25 @@ export const Search = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     console.log('A search was submitted: ' + inputValue);
+
+    getData();
+
+    if (loading) {
+      console.log('loading');
+    }
+    if (error) {
+      console.log('error');
+    }
+    if (data) {
+      console.log({ data });
+
+      const filteredData = data.popular_artists.artists.filter(({ name }) =>
+        nameIncludesSearchTerm(inputValue.toLowerCase())(name.toLowerCase())
+      );
+
+      setDisplayedArtists(filteredData);
+      console.log({ filteredData });
+    }
     event.preventDefault();
   };
 
