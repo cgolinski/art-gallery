@@ -1,7 +1,13 @@
 import * as React from 'react';
 import { useParams } from 'react-router-dom';
+import { HomeButton } from './HomeButton.component';
 
 export const ArtworkDetailComponent = () => {
-  let { artworkId } = useParams();
-  return <div>Artwork page. artworkId: {artworkId}</div>;
+  const { artworkId } = useParams();
+  return (
+    <div>
+      <HomeButton />
+      <div>Artwork page. artworkId: {artworkId}</div>
+    </div>
+  );
 };
