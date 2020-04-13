@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { PopularArtists } from './PopularArtists.component';
-import { Search } from './Search.component';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
 import { GetPopularArtistsData } from './types/data.types';
+import { ArtworkDetailComponent } from './ArtworkDetail.component';
+import { Dashboard } from './Dashboard.component';
 
 const GET_POPULAR_ARTISTS = gql`
   {
@@ -38,16 +39,22 @@ const App = () => {
   );
 
   return (
-    <div>
-      <div className="flex justify-end">
-        <Search setSearchValue={setSearchValue} searchValue={searchValue} />
-      </div>
-      <PopularArtists
-        loading={loading}
-        error={error}
-        displayedArtists={displayedArtists}
-      />
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/artwork/:artworkId">
+          <ArtworkDetailComponent />
+        </Route>
+        <Route path="/">
+          <Dashboard
+            setSearchValue={setSearchValue}
+            searchValue={searchValue}
+            loading={loading}
+            error={error}
+            displayedArtists={displayedArtists}
+          />
+        </Route>
+      </Switch>
+    </Router>
   );
 };
 
