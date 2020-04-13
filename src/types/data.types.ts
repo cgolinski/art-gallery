@@ -9,7 +9,7 @@ export type Artist = {
 
 export type Artists = Artist[];
 
-export type PopularArtists = { artists: Artists };
+export type TrendingArtists = { artists: Artists };
 
 export type ArtworkDetail = {
   id: string;
@@ -31,8 +31,8 @@ export type ArtworkDetail = {
   title: string;
 };
 
-export type GetPopularArtistsData = {
-  popular_artists: PopularArtists;
+export type GetTrendingArtistsData = {
+  trending_artists: TrendingArtists;
 };
 export type GetArtworkDetailData = {
   artwork: ArtworkDetail;
