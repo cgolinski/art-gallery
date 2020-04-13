@@ -13,10 +13,14 @@ export const Search: React.StatelessComponent<SearchProps> = ({
     setSearchValue(event.target.value);
   };
 
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+  };
+
   const clearSearch = () => setSearchValue('');
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input
         className="ba br2 pa2 f4 dib mr2 mt2 mb1"
         type="text"
