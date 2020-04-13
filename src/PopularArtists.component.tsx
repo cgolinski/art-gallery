@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Artwork } from './Artwork.component';
-import type { Artist, ArtworkType } from './types/data.types';
+import { ArtworkTile } from './ArtworkTile.component';
+import type { Artist, ArtworkTileType } from './types/data.types';
 import { ApolloError } from 'apollo-boost';
 import { Loading } from './Loading.component';
 import { Error } from './Error.component';
@@ -30,8 +30,8 @@ export const PopularArtists: React.StatelessComponent<PopularArtistsProps> = ({
             <span>{bio}</span>
           </div>
           <div className="flex justify-around flex-wrap">
-            {artworks.map((artwork: ArtworkType) => (
-              <Artwork key={artwork.id} artwork={artwork} />
+            {artworks.map((artwork: ArtworkTileType) => (
+              <ArtworkTile key={artwork.id} artworkTile={artwork} />
             ))}
           </div>
         </div>

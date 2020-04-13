@@ -4,7 +4,7 @@ export type Artist = {
   id: string;
   name: string;
   bio: string;
-  artworks: ArtworksType;
+  artworks: ArtworkTilesType;
 };
 
 export type Artists = Artist[];
@@ -15,10 +15,10 @@ export type GetPopularArtistsData = {
   popular_artists: PopularArtists;
 };
 
-export type ArtworkType = {
+export type ArtworkTileType = {
   id: string;
   title: string;
   imageUrl: string;
 };
 
-export type ArtworksType = ArtworkType[];
+export type ArtworkTilesType = ArtworkTileType[];
