@@ -22,6 +22,7 @@ export const PopularArtists: React.StatelessComponent<PopularArtistsProps> = ({
   return (
     <div>
       <h2>Popular Artists</h2>
+      {!displayedArtists.length && 'No results found'}
       {displayedArtists.map(({ id, name, bio, artworks }: Artist) => (
         <div key={id}>
           <div className="flex flex-column">
