@@ -36,6 +36,7 @@ export const Search: React.StatelessComponent<SearchProps> = ({
         className="br4 bg-white ph3 pv2"
         value="See all artists"
         onClick={clearSearch}
+        disabled={!searchValue}
       />
     </form>
   );
