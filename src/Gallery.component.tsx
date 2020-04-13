@@ -5,13 +5,13 @@ import { ApolloError } from 'apollo-boost';
 import { Loading } from './Loading.component';
 import { Error } from './Error.component';
 
-type PopularArtistsProps = {
+type GalleryProps = {
   displayedArtists: Artist[];
   loading: boolean;
   error?: ApolloError;
 };
 
-export const PopularArtists: React.StatelessComponent<PopularArtistsProps> = ({
+export const Gallery: React.StatelessComponent<GalleryProps> = ({
   displayedArtists,
   loading,
   error,
@@ -25,14 +25,11 @@ export const PopularArtists: React.StatelessComponent<PopularArtistsProps> = ({
   }
   return (
     <div>
-      <h2>Popular Artists</h2>
       {!displayedArtists.length && 'No results found'}
-      {displayedArtists.map(({ id, name, bio, artworks }: Artist) => (
+      {displayedArtists.map(({ id, name, years, artworks }: Artist) => (
         <div key={id}>
-          <div className="flex flex-column">
-            <h3 className="b mb0">{name}</h3>
-            <span>{bio}</span>
-          </div>
+          <h2 className="db b mb0 pt6 tc">{name}</h2>
+          <div className="tc f-copy">{years}</div>
           <div className="flex justify-around flex-wrap">
             {artworks.map((artwork: ArtworkTileType) => (
               <ArtworkTile key={artwork.id} artworkTile={artwork} />

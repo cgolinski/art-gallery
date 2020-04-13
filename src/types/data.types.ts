@@ -3,7 +3,7 @@
 export type Artist = {
   id: string;
   name: string;
-  bio: string;
+  years: string;
   artworks: ArtworkTilesType;
 };
 

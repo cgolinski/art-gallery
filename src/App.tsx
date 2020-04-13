@@ -12,11 +12,14 @@ const GET_POPULAR_ARTISTS = gql`
       artists {
         id
         name
-        bio
+        years
         artworks {
           id
           title
           imageUrl
+          images {
+            url(version: "square")
+          }
         }
       }
     }

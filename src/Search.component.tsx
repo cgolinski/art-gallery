@@ -21,23 +21,25 @@ export const Search: React.StatelessComponent<SearchProps> = ({
 
   return (
     <form onSubmit={handleSubmit}>
+      <label className="db pr2" htmlFor="search-input">
+        Search by artist
+      </label>
       <input
-        className="ba br2 pa2 f4 dib mr2 mt2 mb1"
+        className="f4 ba br2 pa2 mv2"
         type="text"
         id="search-input"
         value={searchValue}
         onChange={handleChange}
       />
-      <label className="f4 pb2 db" htmlFor="search-input">
-        Search by artist
-      </label>
-      <input
-        type="reset"
-        className="br4 bg-white ph3 pv2"
-        value="See all artists"
-        onClick={clearSearch}
-        disabled={!searchValue}
-      />
+      <div>
+        <input
+          type="reset"
+          className="br4 bg-white ph3 pv2"
+          value="Clear search"
+          onClick={clearSearch}
+          disabled={!searchValue}
+        />
+      </div>
     </form>
   );
 };
