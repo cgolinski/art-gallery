@@ -31,7 +31,12 @@ export const Search: React.StatelessComponent<SearchProps> = ({
       <label className="f4 pb2 db" htmlFor="search-input">
         Search by artist
       </label>
-      <input type="reset" value="Clear search" onClick={clearSearch} />
+      <input
+        type="reset"
+        className="br4 bg-white ph3 pv2"
+        value="See all artists"
+        onClick={clearSearch}
+      />
     </form>
   );
 };

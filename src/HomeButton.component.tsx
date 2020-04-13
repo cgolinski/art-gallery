@@ -7,8 +7,12 @@ export const HomeButton = () => {
   const handleClick = () => history.push('/');
 
   return (
-    <button type="button" onClick={handleClick}>
-      Go home
+    <button
+      className="br4 bg-lightest-blue ph3 pv2 mt3 ml3 b"
+      type="button"
+      onClick={handleClick}
+    >
+      {`<`} return to gallery
     </button>
   );
 };
