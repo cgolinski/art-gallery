@@ -13,19 +13,21 @@ export const Search: React.StatelessComponent<SearchProps> = ({
     setSearchValue(event.target.value);
   };
 
+  const clearSearch = () => setSearchValue('');
+
   return (
     <form>
       <input
         className="ba br2 pa2 f4 dib mr2 mt2 mb1"
-        type="search"
+        type="text"
         id="search-input"
         value={searchValue}
         onChange={handleChange}
       />
       <label className="f4 pb2 db" htmlFor="search-input">
         Search by artist
-        {/* or artwork */}
       </label>
+      <input type="reset" value="Clear search" onClick={clearSearch} />
     </form>
   );
 };

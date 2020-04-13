@@ -28,20 +28,14 @@ const App = () => {
   );
 
   const [searchValue, setSearchValue] = React.useState('');
+
   const popularArtistsData: GetPopularArtistsData = data || {
     popular_artists: { artists: [] },
   };
 
-  const filteredArtists =
-    popularArtistsData.popular_artists.artists.length && searchValue
-      ? popularArtistsData.popular_artists.artists.filter(({ name }) =>
-          name.toLowerCase().includes(searchValue.toLowerCase())
-        )
-      : [];
-
-  const displayedArtists = filteredArtists.length
-    ? filteredArtists
-    : popularArtistsData.popular_artists.artists || [];
+  const displayedArtists = popularArtistsData.popular_artists.artists.filter(
+    ({ name }) => name.toLowerCase().includes(searchValue.toLowerCase())
+  );
 
   return (
     <div>
