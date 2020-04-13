@@ -16,9 +16,13 @@ export const PopularArtists: React.StatelessComponent<PopularArtistsProps> = ({
   loading,
   error,
 }) => {
-  if (loading) return <Loading />;
-  if (error) return <Error errorMessage={error?.message} />;
+  if (loading) {
+    return <Loading />;
+  }
 
+  if (error) {
+    return <Error errorMessage={error?.message} />;
+  }
   return (
     <div>
       <h2>Popular Artists</h2>
