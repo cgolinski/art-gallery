@@ -10,7 +10,6 @@ export const Dashboard = ({
   displayedArtists,
 }: any) => (
   <div className="pa3">
-    <h1 className="tc">Gallery of Popular Artists</h1>
     <div className="tc pt4">
       <Search setSearchValue={setSearchValue} searchValue={searchValue} />
     </div>

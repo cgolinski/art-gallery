@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { GetTrendingArtistsData } from './types/data.types';
 import { ArtworkDetailComponent } from './ArtworkDetail.component';
 import { Dashboard } from './Dashboard.component';
+import { Header } from './Header.component';
 
 const GET_TRENDING_ARTISTS = gql`
   {
@@ -43,6 +44,7 @@ const App = () => {
 
   return (
     <Router>
+      <Header />
       <Switch>
         <Route path="/artwork/:artworkId">
           <ArtworkDetailComponent />
