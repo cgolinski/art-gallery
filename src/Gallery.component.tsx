@@ -4,6 +4,7 @@ import type { Artist, ArtworkTileType } from './types/data.types';
 import { ApolloError } from 'apollo-boost';
 import { Loading } from './Loading.component';
 import { Error } from './Error.component';
+import { ArtistSubheader } from './ArtistSubheader.component';
 
 type GalleryProps = {
   displayedArtists: Artist[];
@@ -26,17 +27,22 @@ export const Gallery: React.StatelessComponent<GalleryProps> = ({
   return (
     <div>
       {!displayedArtists.length && 'No results found'}
-      {displayedArtists.map(({ id, name, years, artworks }: Artist) => (
-        <div key={id}>
-          <h2 className="db b mb0 pt6 tc">{name}</h2>
-          <div className="tc f-copy">{years}</div>
-          <div className="flex justify-around flex-wrap">
-            {artworks.map((artwork: ArtworkTileType) => (
-              <ArtworkTile key={artwork.id} artworkTile={artwork} />
-            ))}
+      {displayedArtists.map(
+        ({ id, name, birthday, deathday, artworks }: Artist) => (
+          <div key={id}>
+            <ArtistSubheader
+              name={name}
+              birthday={birthday}
+              deathday={deathday}
+            />
+            <div className="flex justify-around flex-wrap">
+              {artworks.map((artwork: ArtworkTileType) => (
+                <ArtworkTile key={artwork.id} artworkTile={artwork} />
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        )
+      )}
     </div>
   );
 };

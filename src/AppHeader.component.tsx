@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
-export const Header = () => {
+export const AppHeader = () => {
   const { pathname } = useLocation();
 
   return (
