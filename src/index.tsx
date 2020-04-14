@@ -8,7 +8,7 @@ import * as serviceWorker from './serviceWorker';
 import 'tachyons';
 
 const client = new ApolloClient({
-  uri: 'https://metaphysics-production.artsy.net',
+  uri: 'https://metaphysics-staging.artsy.net',
 });
 
 ReactDOM.render(
