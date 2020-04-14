@@ -3,7 +3,7 @@ import * as React from 'react';
 type ErrorProps = {
   errorMessage?: string;
 };
-export const Error: React.StatelessComponent<ErrorProps> = ({
+export const Error: React.FunctionComponent<ErrorProps> = ({
   errorMessage = 'Error: unknown',
 }) => (
   <div>

@@ -4,7 +4,7 @@ import { ArtworkDetail } from './components/ArtworkDetail.component';
 import { Dashboard } from './components/Dashboard.component';
 import { AppHeader } from './components/AppHeader.component';
 
-const App = () => {
+const App: React.FunctionComponent = () => {
   return (
     <Router>
       <AppHeader />

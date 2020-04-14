@@ -11,11 +11,11 @@ type GalleryProps = {
   error?: ApolloError;
 };
 
-export const Gallery: React.StatelessComponent<GalleryProps> = ({
+export const Gallery: React.FunctionComponent<GalleryProps> = ({
   displayedArtists,
   loading,
   error,
-}) => {
+}: GalleryProps) => {
   if (loading) {
     return <Loading />;
   }

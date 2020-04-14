@@ -29,7 +29,7 @@ const GET_ARTWORK_DETAIL = gql`
   }
 `;
 
-export const ArtworkDetail = () => {
+export const ArtworkDetail: React.FunctionComponent = () => {
   const { artworkId } = useParams();
 
   const { loading, error, data } = useQuery<GetArtworkDetailData>(
@@ -38,7 +38,6 @@ export const ArtworkDetail = () => {
   );
 
   const artworkDetail = data?.artwork;
-  console.log({ artworkDetail });
 
   if (loading) {
     return <Loading />;
@@ -59,7 +58,7 @@ export const ArtworkDetail = () => {
           />
         </div>
       </div>
-      <ArtworkText artworkDetail={artworkDetail} />
+      {artworkDetail && <ArtworkText artworkDetail={artworkDetail} />}
     </div>
   );
 };

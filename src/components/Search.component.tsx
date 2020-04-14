@@ -5,7 +5,7 @@ export type SearchProps = {
   searchValue: string;
 };
 
-export const Search: React.StatelessComponent<SearchProps> = ({
+export const Search: React.FunctionComponent<SearchProps> = ({
   setSearchValue,
   searchValue,
 }: SearchProps) => {

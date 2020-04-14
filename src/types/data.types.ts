@@ -1,5 +1,3 @@
-// These are data types returned from the GraphQL API. Is there a better place to store them?
-
 export type Artist = {
   id: string;
   name: string;

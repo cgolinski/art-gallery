@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
-const Header = () => <h1 className="tc">Gallery of Popular Artists</h1>;
+const Header: React.FunctionComponent = () => (
+  <h1 className="tc">Gallery of Popular Artists</h1>
+);
 
-export const AppHeader = () => {
+export const AppHeader: React.FunctionComponent = () => {
   const { pathname } = useLocation();
 
   return (

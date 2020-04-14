@@ -6,7 +6,7 @@ type ArtistSubheaderProps = {
   deathday: string;
 };
 
-export const ArtistSubheader: React.StatelessComponent<ArtistSubheaderProps> = ({
+export const ArtistSubheader: React.FunctionComponent<ArtistSubheaderProps> = ({
   name,
   birthday,
   deathday,

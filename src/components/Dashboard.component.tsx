@@ -24,7 +24,7 @@ const GET_TRENDING_ARTISTS = gql`
   }
 `;
 
-export const Dashboard = () => {
+export const Dashboard: React.FunctionComponent = () => {
   const { loading, error, data } = useQuery<GetTrendingArtistsData>(
     GET_TRENDING_ARTISTS
   );

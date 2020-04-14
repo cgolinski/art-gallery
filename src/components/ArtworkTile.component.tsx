@@ -4,11 +4,10 @@ import './ArtworkTile.component.css';
 import type { ArtworkTileType } from '../types/data.types';
 
 type ArtworkTileProps = {
-  key: string;
   artworkTile: ArtworkTileType;
 };
 
-export const ArtworkTile: React.StatelessComponent<ArtworkTileProps> = ({
+export const ArtworkTile: React.FunctionComponent<ArtworkTileProps> = ({
   artworkTile,
 }: ArtworkTileProps) => {
   return (
