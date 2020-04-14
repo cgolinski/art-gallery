@@ -1,8 +1,12 @@
+.wrapper {
+  justify-content: center;
+  display: flex;
+  padding: 3rem;
+}
+
 .loading-spinner {
   font-size: 10rem;
   animation: loading-spinner 1.2s linear infinite;
-  vertical-align: middle;
-  text-align: center;
 }
 @keyframes loading-spinner {
   0% {
