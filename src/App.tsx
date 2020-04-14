@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
 import { GetTrendingArtistsData } from './types/data.types';
-import { ArtworkDetailComponent } from './ArtworkDetail.component';
-import { Dashboard } from './Dashboard.component';
-import { AppHeader } from './AppHeader.component';
+import { ArtworkDetailComponent } from './components/ArtworkDetail.component';
+import { Dashboard } from './components/Dashboard.component';
+import { AppHeader } from './components/AppHeader.component';
 
 const GET_TRENDING_ARTISTS = gql`
   {

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useParams } from 'react-router-dom';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
-import { GetArtworkDetailData } from './types/data.types';
+import { GetArtworkDetailData } from '../types/data.types';
 import { Loading } from './Loading.component';
 import { Error } from './Error.component';
 import './ArtworkTile.component.css';

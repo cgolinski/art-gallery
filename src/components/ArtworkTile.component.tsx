@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 import './ArtworkTile.component.css';
-import type { ArtworkTileType } from './types/data.types';
+import type { ArtworkTileType } from '../types/data.types';
 
 type ArtworkTileProps = {
   key: string;

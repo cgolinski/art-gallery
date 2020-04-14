@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ArtworkTile } from './ArtworkTile.component';
-import type { Artist, ArtworkTileType } from './types/data.types';
+import type { Artist, ArtworkTileType } from '../types/data.types';
 import { ApolloError } from 'apollo-boost';
 import { Loading } from './Loading.component';
 import { Error } from './Error.component';
