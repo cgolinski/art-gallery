@@ -22,11 +22,9 @@ export type ArtworkDetail = {
   dimensions: {
     in: string;
   };
-  imageUrl: string;
   images: {
     url: string;
   };
-  displayLabel: string;
   medium: string;
   title: string;
 };
@@ -40,8 +38,6 @@ export type GetArtworkDetailData = {
 
 export type ArtworkTileType = {
   id: string;
-  title: string;
-  imageUrl: string;
   images: { url: string };
 };
 

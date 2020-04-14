@@ -14,7 +14,7 @@ export const ArtworkTile: React.StatelessComponent<ArtworkTileProps> = ({
   return (
     <NavLink to={`/artwork/${artworkTile.id}`} className="artwork-link">
       <div className="ma4 pointer picture-frame artwork-tile">
-        <img src={artworkTile.imageUrl} alt="artwork" />
+        <img src={artworkTile.images[0].url} alt="artwork" />
       </div>
     </NavLink>
   );

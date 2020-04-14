@@ -20,11 +20,9 @@ const GET_ARTWORK_DETAIL = gql`
       dimensions {
         in
       }
-      imageUrl
       images {
         url(version: "large")
       }
-      displayLabel
       medium
       title
     }
@@ -40,6 +38,7 @@ export const ArtworkDetail = () => {
   );
 
   const artworkDetail = data?.artwork;
+  console.log({ artworkDetail });
 
   if (loading) {
     return <Loading />;

@@ -17,8 +17,6 @@ const GET_TRENDING_ARTISTS = gql`
         deathday
         artworks {
           id
-          title
-          imageUrl
           images {
             url(version: "square")
           }
