@@ -11,7 +11,10 @@ export const ArtworkTile: React.FunctionComponent<ArtworkTileProps> = ({
   artworkTile,
 }: ArtworkTileProps) => {
   return (
-    <NavLink to={`/artwork/${artworkTile.id}`} className="artwork-link">
+    <NavLink
+      to={`/art-gallery/artwork/${artworkTile.id}`}
+      className="artwork-link"
+    >
       <div className="ma4 pointer picture-frame artwork-tile">
         <img src={artworkTile.images[0].url} alt="artwork" />
       </div>

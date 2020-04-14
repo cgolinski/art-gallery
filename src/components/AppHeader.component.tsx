@@ -10,10 +10,10 @@ export const AppHeader: React.FunctionComponent = () => {
 
   return (
     <div className="bg-dark-gray white pa3">
-      {pathname === '/' ? (
+      {pathname === '/art-gallery' ? (
         <Header />
       ) : (
-        <NavLink className="link white hover-moon-gray" to="/">
+        <NavLink className="link white hover-moon-gray" to="/art-gallery">
           <Header />
         </NavLink>
       )}
