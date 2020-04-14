@@ -26,7 +26,6 @@ export type ArtworkDetail = {
   images: {
     url: string;
   };
-  image_title: string;
   displayLabel: string;
   medium: string;
   title: string;
