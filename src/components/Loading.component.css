@@ -1,24 +1,16 @@
 .loading-spinner {
-  height: 80px;
-  width: 80px;
-  margin: auto;
-}
-.loading-spinner:after {
-  border: 6px solid #fff;
-  border-radius: 50%;
-  border-color: #333 transparent #333 transparent;
-  content: ' ';
-  display: block;
-  height: 64px;
-  margin: 8px;
-  width: 64px;
+  font-size: 10rem;
   animation: loading-spinner 1.2s linear infinite;
+  vertical-align: middle;
+  text-align: center;
 }
 @keyframes loading-spinner {
   0% {
     transform: rotate(0deg);
+    transform-origin: center center;
   }
   100% {
     transform: rotate(360deg);
+    transform-origin: center center;
   }
 }
