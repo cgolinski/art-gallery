@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
 import { GetTrendingArtistsData } from './types/data.types';
-import { ArtworkDetailComponent } from './components/ArtworkDetail.component';
+import { ArtworkDetail } from './components/ArtworkDetail.component';
 import { Dashboard } from './components/Dashboard.component';
 import { AppHeader } from './components/AppHeader.component';
 
@@ -48,7 +48,7 @@ const App = () => {
       <AppHeader />
       <Switch>
         <Route path="/artwork/:artworkId">
-          <ArtworkDetailComponent />
+          <ArtworkDetail />
         </Route>
         <Route path="/">
           <Dashboard

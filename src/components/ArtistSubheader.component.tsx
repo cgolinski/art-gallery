@@ -13,6 +13,8 @@ export const ArtistSubheader: React.StatelessComponent<ArtistSubheaderProps> = (
 }: ArtistSubheaderProps) => (
   <>
     <h2 className="db b mb0 pt6 f1 tl mv0 mh5 tracked-tight">{name}</h2>
-    <div className="tl mb0 mt2 mh5 f4">{`${birthday}–${deathday}`}</div>
+    <div className="tl mb0 mt2 mh5 f4">
+      {deathday ? `${birthday}–${deathday}` : birthday}
+    </div>
   </>
 );
