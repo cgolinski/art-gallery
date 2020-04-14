@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "89798245f2da73b02004247a01079df4",
+    "revision": "c321776a343347c1323b37b0865ac9a8",
     "url": "/art-gallery/index.html"
   },
   {
-    "revision": "bf0fa00594050e87150c",
+    "revision": "21e15d0d67df31fbe805",
     "url": "/art-gallery/static/css/2.3b6f1bda.chunk.css"
   },
   {
-    "revision": "afc28e63da75d1d83275",
+    "revision": "d45d77c0098ee59fae03",
     "url": "/art-gallery/static/css/main.47a06c32.chunk.css"
   },
   {
-    "revision": "bf0fa00594050e87150c",
-    "url": "/art-gallery/static/js/2.2fc9a9d7.chunk.js"
+    "revision": "21e15d0d67df31fbe805",
+    "url": "/art-gallery/static/js/2.98638be1.chunk.js"
   },
   {
     "revision": "216e537bacc64f9dbaabd26649a9ab95",
-    "url": "/art-gallery/static/js/2.2fc9a9d7.chunk.js.LICENSE.txt"
+    "url": "/art-gallery/static/js/2.98638be1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "afc28e63da75d1d83275",
-    "url": "/art-gallery/static/js/main.d1d9247c.chunk.js"
+    "revision": "d45d77c0098ee59fae03",
+    "url": "/art-gallery/static/js/main.96479b9e.chunk.js"
   },
   {
     "revision": "9cb01ee6c712a33f8bea",
