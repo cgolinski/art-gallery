@@ -1,6 +1,8 @@
 # Art Gallery
 
-This is a demo app built with React, TypeScript, GraphQL, Tachyons. It uses [Artsy's GraphQL API](https://github.com/artsy/metaphysics).
+Gallery of popular artists' works of art. Built with React, TypeScript, GraphQL, Tachyons, and uses [Artsy's GraphQL API](https://github.com/artsy/metaphysics).
+
+Deployed [here](https://cgolinski.github.io/art-gallery/).
 
 ## Getting started
 
@@ -13,5 +15,4 @@ yarn
 yarn start
 ```
 
-Open
-[http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
